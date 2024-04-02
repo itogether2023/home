@@ -148,7 +148,7 @@ const Section1 = styled.div`
             p {
                 font-size: 24px;
                 font-weight: bold;
-                line-height: 1.2;
+                line-height: 1.5;
                 padding: 10px 0px;
                 /* color: #fff; */
             }
@@ -157,7 +157,24 @@ const Section1 = styled.div`
             .tBox {
                 top: 50%;
                 left: 50%;
-                width: 80%;
+                width: 75%;
+                h1 {
+                    font-size: 42px;
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+        @media screen and (max-width: 600px) {
+            height: 400px;
+            .tBox {
+                h1 {
+                    font-size: 32px;
+                }
+                p {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -219,6 +236,25 @@ const Section2 = styled.div`
             }
         }
     }
+    @media screen and (max-width: 600px) {
+        margin-top: 40px;
+        margin-bottom: 60px;
+        h2 {
+            font-size: 32px;
+            margin-bottom: 60px;
+        }
+        .business {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .business div div,
+        .business div h4,
+        .business div p {
+            margin: 0 auto;
+            width: 75%;
+        }
+    }
 `;
 
 const Section3 = styled.div`
@@ -247,6 +283,11 @@ const Section3 = styled.div`
             padding: 20px 30px;
             text-align: center;
             border: 1px solid black;
+            border-radius: 3px;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
     @media screen and (max-width: 800px) {
@@ -257,11 +298,23 @@ const Section3 = styled.div`
         h4 {
             font-size: 20px;
         }
-        ul {
-            li {
-                padding: 20px 20px;
-                font-size: 12px;
-            }
+        ul li {
+            padding: 20px 20px;
+            font-size: 12px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+        ul li {
+            padding: 10px 10px;
+            font-size: 12px;
         }
     }
 `;
@@ -307,6 +360,15 @@ const Section4 = styled.div`
         }
         ul li {
             padding: 10px 20px;
+            font-size: 16px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        h4 {
             font-size: 16px;
         }
     }
@@ -389,6 +451,16 @@ const Section5 = styled.div`
         }
         .infoBox .tel {
             padding: 0 5px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .infoBox {
+            flex-direction: column;
+            gap: 20px;
+        }
+        .infoBox .com,
+        .infoBox .addr {
+            border: 0px;
         }
     }
 `;

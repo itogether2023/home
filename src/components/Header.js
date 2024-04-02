@@ -116,4 +116,11 @@ const Head = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 600px) {
+        nav.mo .menu li {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
 `;
