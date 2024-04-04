@@ -259,6 +259,9 @@ const Section2 = styled.div`
 
 const Section3 = styled.div`
     background: url(${sec3Back});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-top: 80px;
     padding-bottom: 80px;
     display: flex;
@@ -321,6 +324,9 @@ const Section3 = styled.div`
 
 const Section4 = styled.div`
     background: url(${sec4Back});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-top: 80px;
     padding-bottom: 80px;
     display: flex;
