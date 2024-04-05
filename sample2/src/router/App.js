@@ -6,8 +6,7 @@ import Footer from "components/Footer";
 import Main from "pages/Main";
 import AboutUs from "pages/AboutUs";
 import History from "pages/History";
-import Team from "pages/Team";
-import Funds from "pages/Funds";
+import Estimate from "pages/Estimate";
 import Portfolio from "pages/Portfolio";
 import News from "pages/News";
 import Notice from "pages/Notice";
@@ -29,9 +28,10 @@ function App() {
                     path="/pages/History"
                     element={<History></History>}
                 ></Route>
-
-                <Route path="/pages/Team" element={<Team></Team>}></Route>
-                <Route path="/pages/Funds" element={<Funds></Funds>}></Route>
+                <Route
+                    path="/pages/Estimate"
+                    element={<Estimate></Estimate>}
+                ></Route>
                 <Route
                     path="/pages/Portfolio"
                     element={<Portfolio></Portfolio>}
