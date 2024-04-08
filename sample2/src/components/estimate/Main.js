@@ -21,7 +21,9 @@ export default function Main(props) {
         setLoading(true);
     }, [props]);
 
-    const handleCheckItem = (e) => {};
+    const handleCheckItem = (e) => {
+        props.handleCheckItem(e);
+    };
 
     return (
         <Section>
