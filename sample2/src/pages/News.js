@@ -1,8 +1,21 @@
-import Banner from "components/Banner";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+import Banner from "components/Banner";
+
+import dataJson from "../data";
+
 export default function News() {
+    const [newsList, setNewsList] = useState();
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(false);
+        setNewsList(dataJson.newsData);
+        setLoading(true);
+    }, []);
+
     return (
         <>
             <Banner text="News"></Banner>
@@ -18,26 +31,26 @@ export default function News() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                [속보] 삼성, 애플 "Itogether 매우 위험한 회사로
-                                성장할 것"
-                            </td>
-                            <td>PKD</td>
-                            <td>34/01/23</td>
-                            <td>124k</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                [속보] Itogether 주식회사 설립! 주식시장 이대로
-                                괜찮을 것인가?
-                            </td>
-                            <td>PKD</td>
-                            <td>34/01/23</td>
-                            <td>124k</td>
-                        </tr>
+                        {loading &&
+                            newsList.map((news, i) => {
+                                return (
+                                    <tr>
+                                        <td>{news.id}</td>
+                                        <td>
+                                            <Link
+                                                to={{
+                                                    pathname: `/pages/NewsDetail/${news.id}`,
+                                                }}
+                                            >
+                                                {news.title}
+                                            </Link>
+                                        </td>
+                                        <td>{news.user}</td>
+                                        <td>{news.date}</td>
+                                        <td>124k</td>
+                                    </tr>
+                                );
+                            })}
                     </tbody>
                 </table>
             </Section>

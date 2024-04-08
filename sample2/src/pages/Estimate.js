@@ -5,10 +5,10 @@ import Banner from "components/Banner";
 import Side from "../components/estimate/Side";
 import Main from "../components/estimate/Main";
 
-import cateData from "../data";
+import dataJson from "../data";
 
 export default function Estimate() {
-    const [data] = useState(cateData);
+    const [data] = useState(dataJson.cateData);
     const [viewPoint, setViewPoint] = useState("페이지");
     const [calcData, setCalcData] = useState([]);
 
@@ -58,9 +58,6 @@ export default function Estimate() {
         <>
             <Banner text="Estimate"></Banner>
             <Section className="wrap">
-                <div className="title">
-                    <h2>원하는 기능을 넣어 예상 견적을 짜보세요</h2>
-                </div>
                 <Comp>
                     <Side
                         viewPoint={viewPoint}

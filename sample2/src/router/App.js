@@ -12,7 +12,10 @@ import News from "pages/News";
 import Notice from "pages/Notice";
 import Contact from "pages/Contact";
 
+import NewsDetail from "components/news/NewsDetail";
+
 import "assets/css/common.css";
+import NoticeDetail from "components/notice/NoticeDetail";
 
 function App() {
     return (
@@ -37,7 +40,12 @@ function App() {
                     element={<Portfolio></Portfolio>}
                 ></Route>
                 <Route path="/pages/News" element={<News></News>}></Route>
+                <Route path="/pages/NewsDetail/:id" element={<NewsDetail />} />
                 <Route path="/pages/Notice" element={<Notice></Notice>}></Route>
+                <Route
+                    path="/pages/NoticeDetail/:id"
+                    element={<NoticeDetail />}
+                />
                 <Route
                     path="/pages/Contact"
                     element={<Contact></Contact>}

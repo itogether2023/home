@@ -131,9 +131,12 @@ const Section = styled.div`
                 height: 300px;
                 border-radius: 10px;
                 transition: 1s all;
+                filter: brightness(50%);
             }
             div img:hover {
-                filter: brightness(50%);
+                filter: brightness(100%);
+                transform: scale(1.05);
+                overflow: hidden;
             }
 
             h4 {
