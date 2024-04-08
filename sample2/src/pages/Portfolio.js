@@ -147,6 +147,7 @@ const Section = styled.div`
                 color: gray;
                 text-align: center;
                 font-size: 16px;
+                margin-bottom: 20px;
             }
             .btn {
                 display: flex;

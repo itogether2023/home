@@ -1,39 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function Side(props) {
+    const [focusOn, setFocusOn] = useState("");
+    const [cateList] = useState(props.data);
+
+    useEffect(() => {
+        setFocusOn(props.viewPoint);
+    }, []);
+
+    const handleChangeViewPoint = (point, e) => {
+        props.handleChangeViewPoint(point);
+        setFocusOn(e.target.textContent);
+    };
+
     return (
         <Section>
             <h2>로고</h2>
             <ul>
-                <li
-                    onClick={() => {
-                        props.changeView("page");
-                    }}
-                >
-                    페이지
-                </li>
-                <li
-                    onClick={() => {
-                        props.changeView("design");
-                    }}
-                >
-                    디자인
-                </li>
-                <li
-                    onClick={() => {
-                        props.changeView("function");
-                    }}
-                >
-                    기능
-                </li>
+                {cateList.map((cate, i) => {
+                    return (
+                        <li
+                            key={i}
+                            className={
+                                focusOn === cate.cateName ? "focusOn" : ""
+                            }
+                            onClick={(e) => {
+                                handleChangeViewPoint(cate.cateName, e);
+                            }}
+                        >
+                            {cate.cateName}
+                        </li>
+                    );
+                })}
             </ul>
         </Section>
     );
 }
 
 const Section = styled.div`
-    flex: 1;
+    flex: 1.5;
 
     h2 {
         font-size: 38px;
@@ -52,7 +58,8 @@ const Section = styled.div`
             cursor: default;
             transition: 0.5s all;
         }
-        li:hover {
+
+        li.focusOn {
             background-color: rgba(0, 0, 0, 0.5);
         }
     }

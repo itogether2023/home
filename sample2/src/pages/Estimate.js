@@ -1,54 +1,78 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import Banner from "components/Banner";
 import Side from "../components/estimate/Side";
 import Main from "../components/estimate/Main";
 
-export default function Estimate() {
-    const [view, setView] = useState("page");
+import cateData from "../data";
 
-    const [ladingPage, setLadingPage] = useState(false);
+export default function Estimate() {
+    const [data] = useState(cateData);
+    const [viewPoint, setViewPoint] = useState("페이지");
+    const [calcData, setCalcData] = useState([]);
+
+    const [landing, setLanding] = useState(false);
     const [responsive, setResponsive] = useState(false);
     const [company, setCompany] = useState(false);
     const [shop, setShop] = useState(false);
+    const [weDesign, setWeDesign] = useState(false);
+    const [youDesign, setYouDesign] = useState(false);
+    const [board, setBoard] = useState(false);
+    const [onMap, setOnMap] = useState(false);
 
-    const checkBoxData = {
-        ladingPage,
-        responsive,
-        company,
-        shop,
+    const handleChangeViewPoint = (point) => {
+        setViewPoint(point);
     };
 
-    const changeView = (chView) => {
-        setView(chView);
-    };
-
-    const changeCheck = (e) => {
-        setLadingPage((ladingPage) => !ladingPage);
-        console.log(e.target.name);
+    const handleCheckItem = (e) => {
+        switch (e.target.id) {
+            case "landing":
+                setLanding(!landing);
+                break;
+            case "responsive":
+                setResponsive(!responsive);
+                break;
+            case "company":
+                setCompany(!company);
+                break;
+            case "shop":
+                setShop(!shop);
+                break;
+            case "weDesign":
+                setWeDesign(!weDesign);
+                break;
+            case "youDesign":
+                setYouDesign(!youDesign);
+                break;
+            case "board":
+                setBoard(!board);
+                break;
+            case "onMap":
+                setOnMap(!onMap);
+                break;
+        }
     };
 
     return (
         <>
             <Banner text="Estimate"></Banner>
-
             <Section className="wrap">
                 <div className="title">
                     <h2>원하는 기능을 넣어 예상 견적을 짜보세요</h2>
                 </div>
                 <Comp>
-                    <Side page={view} changeView={changeView}></Side>
+                    <Side
+                        viewPoint={viewPoint}
+                        data={data}
+                        handleChangeViewPoint={handleChangeViewPoint}
+                    />
                     <Main
-                        page={view}
-                        changeCheck={changeCheck}
-                        checkBoxData={checkBoxData}
-                    ></Main>
+                        viewPoint={viewPoint}
+                        data={data}
+                        handleCheckItem={handleCheckItem}
+                    />
                 </Comp>
-                <Calculate>
-                    <ul></ul>
-                    <div className="total">총 견적</div>
-                </Calculate>
             </Section>
         </>
     );

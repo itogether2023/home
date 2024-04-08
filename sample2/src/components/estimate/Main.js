@@ -1,61 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import eData from "../../eData";
-
 export default function Main(props) {
-    // const { ladingPage, responsive, company, shop } = props.checkBoxData;
+    const data = props.data;
+    const [cateItemList, setCateItemList] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-    const test = props.checkBoxData;
-    console.log(test);
+    const [selectList, setSelectList] = useState([]);
+
+    useEffect(() => {}, []);
+
+    useEffect(() => {
+        setLoading(false);
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].cateName == props.viewPoint) {
+                setCateItemList(data[i]);
+                break;
+            }
+        }
+        setLoading(true);
+    }, [props]);
+
+    const handleCheckItem = (e) => {};
 
     return (
         <Section>
-            {props.page == "page" && (
-                <ul className="menuList">
-                    {eData.page.map((item) => {
+            <ul className="menuList">
+                {loading &&
+                    cateItemList.list.map((item, i) => {
                         return (
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    id={item.id}
-                                    name={test[item.id]}
-                                    checked={test[item.id]}
-                                    onChange={props.changeCheck}
-                                />
-                                <label htmlFor={item.id}>{item.name}</label>
-                                <span>{item.price}</span>
+                            <li
+                                onClick={(e) => {
+                                    handleCheckItem(e);
+                                }}
+                                id={item.value}
+                            >
+                                <p>{item.name}</p>
+                                <span>{item.price}원</span>
                             </li>
                         );
                     })}
-                </ul>
-            )}
-            {props.page == "design" && (
-                <ul className="menuList">
-                    {eData.design.map((item) => {
-                        return (
-                            <li>
-                                <input type="checkbox" id={item.id} />
-                                <label htmlFor={item.id}>{item.name}</label>
-                                <span>{item.price}</span>
-                            </li>
-                        );
-                    })}
-                </ul>
-            )}
-            {props.page == "function" && (
-                <ul className="menuList">
-                    {eData.function.map((item) => {
-                        return (
-                            <li>
-                                <input type="checkbox" id={item.id} />
-                                <label htmlFor={item.id}>{item.name}</label>
-                                <span>{item.price}</span>
-                            </li>
-                        );
-                    })}
-                </ul>
-            )}
+            </ul>
         </Section>
     );
 }
@@ -73,10 +58,15 @@ const Section = styled.div`
             padding: 20px 30px;
             border: 1px solid lightgrey;
             border-radius: 5px;
-            input[type="checkbox"] {
+            /* input[type="checkbox"] {
                 vertical-align: bottom;
             }
             label {
+                padding-left: 10px;
+                font-size: 18px;
+            } */
+            p {
+                display: inline-block;
                 padding-left: 10px;
                 font-size: 18px;
             }
@@ -84,6 +74,10 @@ const Section = styled.div`
                 float: right;
                 font-size: 18px;
             }
+        }
+        li.select {
+            background-color: gray;
+            color: white;
         }
     }
 `;
