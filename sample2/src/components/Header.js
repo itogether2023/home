@@ -1,8 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleModal } from "store/loginSlice";
 
-export default function Header() {
+export default function Header(props) {
+    let store = useSelector((state) => {
+        return state;
+    });
+
+    let dispatch = useDispatch();
+
     return (
         <>
             <Head>
@@ -38,9 +46,17 @@ export default function Header() {
                         <li>
                             <Link to={`/pages/Contact`}>Contact Us</Link>
                         </li>
-                        <li>
-                            <Link to={`/pages/Contact`}>Login</Link>
-                        </li>
+                        {!store.login.loginState && (
+                            <li>
+                                <p
+                                    onClick={() => {
+                                        dispatch(toggleModal());
+                                    }}
+                                >
+                                    Login
+                                </p>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </Head>
@@ -70,6 +86,11 @@ const Head = styled.div`
         a {
             color: #fff;
             font-size: 18px;
+        }
+        p {
+            color: #fff;
+            font-size: 18px;
+            cursor: default;
         }
         > li {
             position: relative;

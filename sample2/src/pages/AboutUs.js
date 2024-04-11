@@ -114,7 +114,6 @@ const Section = styled.div`
             height: 300px;
             filter: brightness(50%);
         }
-
         h3 {
             position: absolute;
             font-size: 32px;
@@ -122,6 +121,7 @@ const Section = styled.div`
             transform: translate(-50%, -50%);
             top: 50%;
             left: 50%;
+            line-height: 1.4;
         }
     }
 
@@ -138,6 +138,7 @@ const Section = styled.div`
                 font-size: 32px;
                 font-weight: bold;
                 padding-bottom: 30px;
+                line-height: 1.2;
             }
             p {
                 padding-bottom: 20px;
@@ -181,6 +182,75 @@ const Section = styled.div`
             }
             div:nth-child(2) {
                 font-size: 18px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .description {
+            padding: 0 30px;
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        .title h3 {
+            text-align: center;
+        }
+        .description {
+            padding: 0 30px;
+            gap: 50px;
+            div {
+                h3 {
+                    font-size: 28px;
+                }
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+        .info {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        .title h3 {
+            font-size: 26px;
+        }
+        .description {
+            display: flex;
+            flex-direction: column;
+            img {
+                width: 30%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .info {
+            li {
+                div {
+                    i {
+                        font-size: 42px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .info {
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            li {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px 10px;
+                div {
+                    i {
+                        font-size: 36px;
+                    }
+                }
+                div:nth-child(2) {
+                    font-size: 16px;
+                }
             }
         }
     }
