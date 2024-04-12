@@ -14,10 +14,10 @@ export default function AboutUs() {
             <Banner text="About"></Banner>
 
             <Section className="wrap">
-                {/* <div className="title">
+                <div className="title">
                     <div className="titleBg"></div>
                     <h3>"A Solution provider leading the It Company"</h3>
-                </div> */}
+                </div>
                 <div className="description">
                     <img src={Mamot} alt="" className="logo" />
                     <div>

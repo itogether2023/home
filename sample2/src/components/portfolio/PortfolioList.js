@@ -21,6 +21,8 @@ export default function PortfolioList(props) {
 
 const List = styled.li`
     margin-bottom: 20px;
+    /* position: relative; */
+    /* z-index: 1; */
     div img {
         border: 1px solid gray;
         border-radius: 10px;

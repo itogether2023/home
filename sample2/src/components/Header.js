@@ -177,7 +177,6 @@ const Head = styled.div`
         }
     }
     @media screen and (max-width: 1000px) {
-        position: sticky;
         .pcContainer {
             display: none;
         }
@@ -205,10 +204,10 @@ const Head = styled.div`
             position: fixed;
             background: black;
             width: 30%;
-            height: 100vh;
+            height: 100%;
             top: 0;
             left: 0;
-            z-index: 99;
+            z-index: 990;
             ul {
                 padding-top: 50px;
                 display: flex;
