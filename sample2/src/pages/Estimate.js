@@ -86,9 +86,14 @@ const Section = styled.div`
         background-color: #000;
         border-radius: 5px;
     }
+    @media screen and (max-width: 800px) {
+    }
 `;
 const Comp = styled.div`
     display: flex;
     margin-top: 40px;
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
 `;
 const Calculate = styled.div``;

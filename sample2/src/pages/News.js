@@ -5,10 +5,15 @@ import styled from "styled-components";
 import Banner from "components/Banner";
 
 import dataJson from "../data";
+import { useSelector } from "react-redux";
 
 export default function News() {
     const [newsList, setNewsList] = useState();
     const [loading, setLoading] = useState(false);
+
+    let store = useSelector((state) => {
+        return state;
+    });
 
     useEffect(() => {
         setLoading(false);
@@ -52,6 +57,7 @@ export default function News() {
                                 );
                             })}
                     </tbody>
+                    {store.login.loginState && <button>글작성</button>}
                 </table>
             </Section>
         </>
@@ -97,11 +103,42 @@ const Section = styled.div`
             padding: 20px 0px;
             text-align: center;
             vertical-align: middle;
+            a {
+                line-height: 1.2;
+            }
         }
 
         td:nth-child(2) {
             text-align: start;
             font-size: 17px;
+        }
+
+        button {
+            background: black;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px 20px;
+            color: #fff;
+            margin-top: 20px;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        table {
+            width: 90%;
+        }
+        th:nth-child(5) {
+            display: none;
+        }
+        td:nth-child(5) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        th:nth-child(1) {
+            display: none;
+        }
+        td:nth-child(1) {
+            display: none;
         }
     }
 `;

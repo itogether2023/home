@@ -63,4 +63,26 @@ const Section = styled.div`
             background-color: rgba(0, 0, 0, 0.5);
         }
     }
+    @media screen and (max-width: 800px) {
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ul {
+            width: 80%;
+            margin: 0 auto;
+            flex-direction: row;
+            li {
+                flex: 1;
+            }
+        }
+    }
+    @media screen and (max-width: 400px) {
+        ul {
+            width: 90%;
+            li {
+                font-size: 16px;
+            }
+        }
+    }
 `;

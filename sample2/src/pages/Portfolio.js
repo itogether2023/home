@@ -74,4 +74,30 @@ const Section = styled.div`
         li {
         }
     }
+    @media screen and (max-width: 1000px) {
+        ul {
+            width: 95%;
+            margin: 0 auto;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            li {
+            }
+        }
+    }
+    @media screen and (max-width: 800px) {
+        ul {
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            li {
+            }
+        }
+    }
+    @media screen and (max-width: 500px) {
+        ul {
+            width: 70%;
+            grid-template-columns: 1fr;
+            li {
+            }
+        }
+    }
 `;

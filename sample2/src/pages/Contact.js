@@ -79,7 +79,7 @@ const Section = styled.div`
     form {
         margin: 0 auto;
         margin-bottom: 120px;
-        width: 80%;
+        width: 90%;
         .fBox {
             display: flex;
             margin-bottom: 20px;
@@ -119,6 +119,21 @@ const Section = styled.div`
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 20px;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        form {
+            .fBox {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 10px;
+                div {
+                    input[type="text"] {
+                        width: 80%;
+                    }
+                }
+            }
         }
     }
 `;

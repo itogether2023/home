@@ -49,8 +49,8 @@ export default function Main(props) {
 
 const Section = styled.div`
     flex: 5;
-    margin-left: 20px;
-    margin-top: 70px;
+    margin: 70px 20px 0px 20px;
+
     height: 400px;
     .menuList {
         display: flex;
