@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { fabric } from "fabric";
-import CanvasCss from "assets/css/canvas.css";
-
+import "assets/css/canvas.css";
 export default function DesignCanvas(props) {
     const canvasContainerRef = useRef(null);
     const canvasRef = useRef(null);
@@ -104,7 +103,7 @@ export default function DesignCanvas(props) {
         canvas.on("mouse:up", handleMouseUp);
     };
     return (
-        <CanvasCss>
+        <>
             <div className="canvas-container" ref={canvasContainerRef}>
                 <canvas ref={canvasRef} />
                 <div className="tool-bar">
@@ -143,7 +142,8 @@ export default function DesignCanvas(props) {
                     </button>
                 </div>
             </div>
-        </CanvasCss>
+        </>
+
 
     );
 }
