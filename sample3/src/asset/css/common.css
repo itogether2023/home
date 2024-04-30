@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+    display: inline-block;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrap {
+        width: 100%;
+    }
+}
