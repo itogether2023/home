@@ -39,6 +39,9 @@ export default function Header() {
                             </li>
 
                             <li>
+                                <Link to={`/pages/Design`}>Design</Link>
+                            </li>
+                            <li>
                                 <Link to={`/pages/Estimate`}>Estimate</Link>
                             </li>
                             <li>
@@ -92,6 +95,9 @@ export default function Header() {
                                 </ol>
                             </li>
 
+                            <li>
+                                <Link to={`/pages/Design`}>Design</Link>
+                            </li>
                             <li>
                                 <Link to={`/pages/Estimate`}>Estimate</Link>
                             </li>
