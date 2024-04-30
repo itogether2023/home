@@ -9,6 +9,7 @@ import Header from "components/Header";
 import Footer from "components/Footer";
 import Main from "pages/Main";
 import AboutUs from "pages/AboutUs";
+import Design from "pages/Design";
 import History from "pages/History";
 import Estimate from "pages/Estimate";
 import Portfolio from "pages/Portfolio";
@@ -36,6 +37,10 @@ function App() {
                 <Route
                     path="/pages/About"
                     element={<AboutUs></AboutUs>}
+                ></Route>
+                <Route
+                    path="/pages/Design"
+                    element={<Design></Design>}
                 ></Route>
                 <Route
                     path="/pages/History"
