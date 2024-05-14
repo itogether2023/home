@@ -1,3 +1,8 @@
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css');
+
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-straight/css/uicons-bold-straight.css');
+
 body {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -7,6 +12,8 @@ body {
 .canvas-container {
     width: 100vw;
     height: 100vh;
+    padding-top: 90px;
+    position: relative;
 }
 
 .canvas-container canvas {
@@ -15,7 +22,7 @@ body {
 
 .tool-bar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 8px;
@@ -26,7 +33,6 @@ body {
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     position: absolute;
     top: 10px;
-    left: 10px;
 }
 
 .tool-bar button {
@@ -44,10 +50,27 @@ body {
     fill: #000000;
 }
 
+.tool-bar button i {
+    font-size: 20px;
+    color: #000000;
+}
+
 .tool-bar button:disabled {
+    background-color: #7279ff;
+}
+
+.tool-bar button.active {
     background-color: #7279ff;
 }
 
 .tool-bar button:disabled svg {
     fill: #ffffff;
+}
+
+.tool-bar button:disabled i {
+    color: #ffffff;
+}
+
+.tool-bar button.active i {
+    color: #ffffff;
 }
