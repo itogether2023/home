@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 
 import "./asset/css/common.css";
 import "./asset/css/fonts.css";
+import "./asset/css/ani.css";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -66,7 +67,7 @@ function App() {
                     closeLoading={closeLoading}
                     setCloseLoading={setCloseLoading}
                 ></Route>
-                <Route path="/About" element={<About></About>}></Route>
+                <Route path="/about" element={<About></About>}></Route>
             </Routes>
 
             {/* <Footer /> */}

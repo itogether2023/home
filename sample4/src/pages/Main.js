@@ -194,6 +194,14 @@ const Loading = styled.div`
                 -webkit-animation: aitf 80s linear infinite;
                 -webkit-transform: translate3d(0, 0, 0);
                 -webkit-backface-visibility: hidden;
+                @-webkit-keyframes aitf {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    100% {
+                        background-position: 100% 50%;
+                    }
+                }
             }
             h1 {
                 font-size: 15vw;
