@@ -93,7 +93,7 @@ export default function About(props) {
                         >
                             <div className="box">
                                 <h1 data-aos="fade-left">What We Make It</h1>
-                                <h2 data-aos="fade-left" data-aos-delay="1s">
+                                <h2 data-aos="fade-left" data-aos-delay="100">
                                     Transforming the whispers of your dreams
                                     into the loud and vibrant symphony of
                                     reality
@@ -131,31 +131,31 @@ export default function About(props) {
                             </p>
                         </div>
                         <div className="fs-box">
-                            <video autoPlay loop muted>
+                            <video autoPlay loop muted data-aos="fade-up">
                                 <source src={box1} type="video/mp4" />
                             </video>
                         </div>
                         <div className="fs-box">
-                            <video autoPlay loop muted>
+                            <video autoPlay loop muted data-aos="fade-up">
                                 <source src={box2} type="video/mp4" />
                             </video>
                         </div>
                         <div className="fs-box">
-                            <video autoPlay loop muted>
+                            <video autoPlay loop muted data-aos="fade-up">
                                 <source src={box3} type="video/mp4" />
                             </video>
                         </div>
                         <div className="fs-box">
-                            <video autoPlay loop muted>
+                            <video autoPlay loop muted data-aos="fade-up">
                                 <source src={movie} type="video/mp4" />
                             </video>
                         </div>
                     </div>
                     <div className="fifth-section">
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li data-aos="fade-up"></li>
+                            <li data-aos="fade-up" data-aos-delay="200"></li>
+                            <li data-aos="fade-up" data-aos-delay="400"></li>
                         </ul>
                     </div>
                 </div>
@@ -215,6 +215,7 @@ const Section = styled.div`
                     font-size: 28px;
                     padding-bottom: 10px;
                 }
+                z-index: 5;
             }
             .fs-box {
                 height: 20%;
