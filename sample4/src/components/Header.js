@@ -86,7 +86,7 @@ const Nav = styled.nav`
         }
     }
 
-    /* &:hover {
+    &:hover {
         width: 15%;
         .menuIcon {
             i {
@@ -99,7 +99,7 @@ const Nav = styled.nav`
                 opacity: 1;
             }
         }
-    } */
+    }
 
     ul li:hover {
         color: white;
