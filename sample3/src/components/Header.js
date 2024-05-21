@@ -18,14 +18,14 @@ export default function Header() {
                             onMouseEnter={() => handleMouseEnter("menu1")}
                             onMouseLeave={() => handleMouseLeave("menu1")}
                         >
-                            Menu
+                            About
                             <ol
                                 className={`sub-menu ${
                                     subMenuOpen.menu1 ? "on" : ""
                                 }`}
                             >
-                                <li>SubMenu</li>
-                                <li>SubMenu</li>
+                                <li>Company</li>
+                                <li>History</li>
                                 <li>SubMenu</li>
                             </ol>
                         </li>
@@ -79,7 +79,7 @@ const Nav = styled.nav`
     position: fixed;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
-
+    z-index: 2;
     > div {
         width: 100%;
         height: 100%;

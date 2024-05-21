@@ -8,8 +8,6 @@ export default function Main(props) {
 
     const [selectList, setSelectList] = useState([]);
 
-    useEffect(() => {}, []);
-
     useEffect(() => {
         setLoading(false);
         for (let i = 0; i < data.length; i++) {

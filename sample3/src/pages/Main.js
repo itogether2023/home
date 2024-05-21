@@ -20,26 +20,7 @@ export default function Main() {
         <>
             <Section>
                 <div className="banner"></div>
-                <div className="intro">
-                    <div className="img">
-                        <img src={intro} alt="" />
-                    </div>
-                    <div className="content">
-                        <h4>
-                            Sleek style, <br></br>
-                            precise time.
-                        </h4>
-                        <p>
-                            Time is our most precious asset.
-                            <br></br> Elevate its value with our watches.
-                        </p>
-                        <button>BUY NOW</button>
-                    </div>
-                </div>
-                <div className="slogan">
-                    Our watches redefine timekeeping
-                    <br></br> Style meets precision on your wrist
-                </div>
+
                 <BestSeller />
                 <div className="watchList">
                     <h2>Unveil the Essence of Time, Captured in Style</h2>
@@ -86,6 +67,26 @@ export default function Main() {
                         </li>
                     </ul>
                     <WatchBox select={select} />
+                </div>
+                <div className="intro">
+                    <div className="img">
+                        <img src={intro} alt="" />
+                    </div>
+                    <div className="content">
+                        <h4>
+                            Sleek style, <br></br>
+                            precise time.
+                        </h4>
+                        <p>
+                            Time is our most precious asset.
+                            <br></br> Elevate its value with our watches.
+                        </p>
+                        <button>BUY NOW</button>
+                    </div>
+                </div>
+                <div className="slogan">
+                    Our watches redefine timekeeping
+                    <br></br> Style meets precision on your wrist
                 </div>
             </Section>
         </>
@@ -136,13 +137,13 @@ const Section = styled.div`
     }
     .watchList {
         background: #222;
-        padding-top: 60px;
+        padding-top: 80px;
         padding-bottom: 80px;
         margin-bottom: 100px;
         h2 {
             text-align: center;
             font-size: 34px;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
             color: white;
         }
         .watchCate {
@@ -150,6 +151,7 @@ const Section = styled.div`
             justify-content: center;
             gap: 30px;
             margin-bottom: 30px;
+
             li {
                 padding: 10px 20px;
                 border: 1px solid #999;
