@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Main from "./pages/Main";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -68,6 +69,7 @@ function App() {
                     setCloseLoading={setCloseLoading}
                 ></Route>
                 <Route path="/about" element={<About></About>}></Route>
+                <Route path="/contact" element={<Contact></Contact>}></Route>
             </Routes>
 
             {/* <Footer /> */}
