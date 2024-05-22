@@ -59,32 +59,30 @@ export default function About(props) {
                         <video autoPlay loop muted>
                             <source src={movie} type="video/mp4" />
                         </video>
-                        <h1>What We Make It</h1>
+                        <h1>LUMIC - LUcid MIstiC</h1>
                         <h3>
-                            Transforming the whispers of your dreams into the
-                            loud and vibrant symphony of reality
+                            상상을 현실로 이루어주는 영감의 직조기 (Inspiration Loom)
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Nihil ut dolor quae dolorem qui a.<br></br>{" "}
-                            Explicabo optio doloribus accusantium minima ut
-                            molestiae distinctio!<br></br> Odio, exercitationem
-                            aperiam vel quos corporis beatae.
+                            아무리 뛰어난 아이디어와 혁신적인 아이템이라도 실현되지 않으면 그저 공상에 불과합니다.<br></br>
+                            {/* 실현되지 않은 상상은 현실에 아무런 영향을 미치지 못하며, 결국 잊혀질 뿐입니다. <br></br> */}
+                            LUMIC과 함께라면 여러분의 상상이 현실이 되어 빛을 발할 수 있도록 도와드리겠습니다.
                         </p>
                     </div>
                     <div className="second-section">
                         <h1 data-aos="fade-up" data-aos-offset="300">
-                            We Make It Transforming
+                            Even the greatest ideas are mere fantasies
                         </h1>
                         <h1 data-aos="fade-up" data-aos-offset="300">
-                            the whispers of your dreams
+                            if not realized
                         </h1>
                         <h1 data-aos="fade-up" data-aos-offset="300">
-                            into the loud and vibrant
+                            To make your dreams shine,
                         </h1>
                         <h1 data-aos="fade-up" data-aos-offset="300">
-                            symphony of reality
+                            LUMIC will be with you
                         </h1>
+
                     </div>
                     <div className="third-section">
                         <ThirdSectionContainer
