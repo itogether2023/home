@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Contact() {
+    const [num, setNum] = useState();
+
     useEffect(() => {
         AOS.init();
+        let createNum = Math.random() * 10000;
+        setNum(Math.floor(createNum));
     }, []);
     return (
         <Section>
@@ -70,7 +74,11 @@ export default function Contact() {
                             placeholder="문의사항을 적어주세요"
                         ></textarea>
                     </div>
-                    <div>
+                    <div className="send">
+                        <div>
+                            <span>{num}</span>
+                            <input type="text" />
+                        </div>
                         <button type="submit">전송하기</button>
                     </div>
                 </form>
@@ -80,9 +88,9 @@ export default function Contact() {
 }
 
 const Section = styled.div`
-    padding-top: 200px;
+    padding-top: 100px;
     padding-bottom: 100px;
-    background: black;
+    background: #101010;
     color: white;
     h1 {
         font-size: 68px;
@@ -138,6 +146,33 @@ const Section = styled.div`
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 20px;
+        }
+        .send {
+            padding-top: 30px;
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+            gap: 30px;
+            input {
+                background: white;
+                border-radius: 5px;
+                margin-left: 20px;
+                font-size: 24px;
+                padding: 2px;
+                width: 80px;
+                text-align: center;
+            }
+            button {
+                background: #101010;
+                color: white;
+                border-radius: 5px;
+                padding: 5px 15px;
+                font-weight: bold;
+                transition: 1s;
+            }
+            button:hover {
+                background: #202020;
+            }
         }
     }
 `;

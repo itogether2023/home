@@ -113,13 +113,14 @@ const Nav = styled.nav`
         gap: 20px;
         margin-top: 20px;
         margin-bottom: 100px;
-
+        margin-right: 2%;
         li {
             cursor: pointer;
             font-size: 86px;
             padding: 0 20px;
             color: #999999;
             opacity: 0;
+            transition: 0.5s;
         }
     }
 
