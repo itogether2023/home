@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 import AOS from "aos";
@@ -10,21 +10,27 @@ import logo from "../asset/img/header/logo.png";
 export default function Header(props) {
     const location = useLocation();
     const [page, setPage] = useState("");
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         setPage(location.pathname.substring(1).toUpperCase());
-    }, []);
+    }, [location]);
 
     const xyHandler = (e, linkTarget) => {
         props.xyHandler(e, linkTarget);
     };
 
     return (
-        <Nav>
+        <Nav
+            className={show ? "show" : "hide"}
+            onClick={() => {
+                setShow(!show);
+            }}
+        >
             <div className="menuIcon">
-                <span>
-                    {page === "" ? <i class="fas fa-ellipsis-v"></i> : page}
-                </span>
+                <div className="bar1"></div>
+                <div className="bar2"></div>
+                <div className="bar3"></div>
             </div>
             <ul>
                 <li
@@ -32,7 +38,7 @@ export default function Header(props) {
                         xyHandler(e, "/");
                     }}
                 >
-                    main
+                    LUMIC
                 </li>
                 <li
                     onClick={(e) => {
@@ -50,13 +56,6 @@ export default function Header(props) {
                 </li>
                 <li
                     onClick={(e) => {
-                        xyHandler(e, "about");
-                    }}
-                >
-                    menu
-                </li>
-                <li
-                    onClick={(e) => {
                         xyHandler(e, "contact");
                     }}
                 >
@@ -68,80 +67,90 @@ export default function Header(props) {
 }
 
 const Nav = styled.nav`
-    border: 2px dashed white;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 10%;
+    width: 100vw;
     height: 5%;
     transform: translateX(-50%);
     left: 50%;
-    z-index: 2;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    background: #101010;
     overflow: hidden;
     transition: 1s all;
     animation: FDown 1s forwards;
-    top: 3%;
     opacity: 0;
+
     @keyframes FDown {
         from {
             top: -10%;
         }
         to {
             opacity: 1;
-            top: 3%;
+            top: 0%;
         }
     }
     .menuIcon {
-        text-align: center;
-        span {
-            color: white;
-            font-size: 24px;
-            transition: 1s all;
-            line-height: 1.45;
-            cursor: pointer;
-        }
-        span i {
-            transform: rotate(90deg);
-        }
-    }
-    ul {
-        margin-bottom: 20%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 5px;
+        padding-top: 10px;
+        div {
+            width: 35px;
+            height: 4px;
+            background-color: white;
+            transition: 0.5s;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
         gap: 20px;
-        margin-top: 10px;
+        margin-top: 20px;
+        margin-bottom: 100px;
+
         li {
-            cursor: default;
-            font-size: 28px;
+            cursor: pointer;
+            font-size: 86px;
             padding: 0 20px;
             color: #999999;
-            /* transform: translateX(100%); */
-            transition: 1s all;
             opacity: 0;
         }
     }
 
-    &:hover {
-        height: 40%;
-        width: 25%;
+    &.show {
+        height: 100%;
+        width: 100%;
         background: rgba(0, 0, 0, 1);
         .menuIcon {
-            span {
-                font-size: 32px;
+            .bar1 {
+                transform: rotate(-45deg) translate(-6px, 6px);
+                transform-origin: center;
             }
-            i {
+            .bar2 {
                 opacity: 0;
-                transform: rotate(90deg);
+            }
+            .bar3 {
+                transform: rotate(45deg) translate(-6px, -6px);
+                transform-origin: center;
             }
         }
         ul {
             li {
-                opacity: 1;
+                animation: 0.8s show 0.8s forwards;
+                @keyframes show {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }

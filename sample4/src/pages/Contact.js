@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function Contact() {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <Section>
-            <h1>What We Make It</h1>
-            <h4>Transforming the whispers of your dreams</h4>
+            <h1 data-aos="fade" data-aos-duration="1000" data-aos-delay="1000">
+                What We Make It
+            </h1>
+            <h4 data-aos="fade" data-aos-duration="1000" data-aos-delay="1200">
+                Transforming the whispers of your dreams
+            </h4>
             <p></p>
-            <form action="">
+            <form
+                data-aos="fade"
+                data-aos-duration="1000"
+                data-aos-delay="1400"
+                action=""
+            >
                 <form action="">
                     <div className="fBox">
                         <div>
@@ -72,10 +87,12 @@ const Section = styled.div`
     h1 {
         font-size: 68px;
         padding-bottom: 20px;
+        text-align: center;
     }
     h4 {
         font-size: 32px;
         padding-bottom: 120px;
+        text-align: center;
     }
     form {
         color: white;
