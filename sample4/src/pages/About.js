@@ -55,6 +55,7 @@ export default function About(props) {
                         className="first-section"
                         data-aos="fade"
                         data-aos-duration="1000"
+                        data-aos-delay="1000"
                     >
                         <video autoPlay loop muted>
                             <source src={movie} type="video/mp4" />
@@ -197,6 +198,7 @@ const Section = styled.div`
             padding-top: 100px;
             padding-bottom: 300px;
             position: relative;
+
             .fs-stiky {
                 text-align: center;
                 position: sticky;
@@ -205,6 +207,7 @@ const Section = styled.div`
                 transform: translateX(-50%, -50%);
                 color: white;
                 /* background: rgba(0, 0, 0, 0.3); */
+
                 h1 {
                     font-size: 42px;
                     padding-bottom: 10px;
@@ -283,6 +286,7 @@ const ThirdSectionContainer = styled.div`
         position: sticky;
         top: 10%;
         color: white;
+        overflow: hidden;
         h1 {
             font-size: 36px;
         }
@@ -291,9 +295,9 @@ const ThirdSectionContainer = styled.div`
 
 const ScrollUlBox = styled.ul`
     padding-top: 20px;
-    width: 100vw;
+    width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     position: sticky;
     top: 25%;
     overflow: hidden;
@@ -301,11 +305,12 @@ const ScrollUlBox = styled.ul`
     transition: 0.5s all;
 
     li {
-        width: 25vw;
+        width: 25%;
         height: 300px;
         background: white;
         transform: translateX(${(props) => props.boxPosition}vw);
         opacity: 1;
+        overflow: hidden;
         img {
             width: 100%;
             height: 100%;

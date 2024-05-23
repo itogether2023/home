@@ -36,22 +36,23 @@ function App() {
         // setTimeout(() => {
         //     setStartLoading(false);
         // }, 2000);
-        setTimeout(() => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            setXY({ x: mouseX, y: mouseY });
-            setBoxSize(300);
+        navigate(linkTarget);
+        // setTimeout(() => {
+        //     const mouseX = e.clientX;
+        //     const mouseY = e.clientY;
+        //     setXY({ x: mouseX, y: mouseY });
+        //     setBoxSize(300);
 
-            setTimeout(() => {
-                navigate(linkTarget);
-                setTimeout(() => {
-                    setBoxSize(0);
-                    setTimeout(() => {
-                        setStartLoading(false);
-                    }, 1000); // 마지막 애니메이션 종료 후 1초 후에 로딩 상태를 해제합니다.
-                }, 1000); // 페이지 이동 후 1초 후에 박스 크기를 다시 0으로 설정합니다.
-            }, 1000); // 박스 크기가 300으로 변한 후 1초 후에 페이지를 이동합니다.
-        }, 100); // 로딩 상태를 설정한 후 0.1초 후에 박스 크기를 설정합니다.
+        //     setTimeout(() => {
+        //         navigate(linkTarget);
+        //         setTimeout(() => {
+        //             setBoxSize(0);
+        //             setTimeout(() => {
+        //                 setStartLoading(false);
+        //             }, 1000); // 마지막 애니메이션 종료 후 1초 후에 로딩 상태를 해제합니다.
+        //         }, 1000); // 페이지 이동 후 1초 후에 박스 크기를 다시 0으로 설정합니다.
+        //     }, 1000); // 박스 크기가 300으로 변한 후 1초 후에 페이지를 이동합니다.
+        // }, 100); // 로딩 상태를 설정한 후 0.1초 후에 박스 크기를 설정합니다.
     };
 
     return (
