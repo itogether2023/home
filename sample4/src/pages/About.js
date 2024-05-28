@@ -62,44 +62,42 @@ export default function About(props) {
                         <video autoPlay loop muted>
                             <source src={movie} type="video/mp4" />
                         </video>
-                        <h1>What We Make It</h1>
+                        <h1>LUMIC - LUcid MIstiC</h1>
                         <h3>
-                            Transforming the whispers of your dreams into the
-                            loud and vibrant symphony of reality
+                            상상을 현실로 이루어주는 영감의 직조기 (Inspiration Loom)
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Nihil ut dolor quae dolorem qui a.<br></br>{" "}
-                            Explicabo optio doloribus accusantium minima ut
-                            molestiae distinctio!<br></br> Odio, exercitationem
-                            aperiam vel quos corporis beatae.
+                            아무리 뛰어난 아이디어와 혁신적인 아이템이라도 실현되지 않으면 그저 공상에 불과합니다.<br></br>
+                            {/* 실현되지 않은 상상은 현실에 아무런 영향을 미치지 못하며, 결국 잊혀질 뿐입니다. <br></br> */}
+                            LUMIC과 함께라면 여러분의 상상이 현실이 되어 빛을 발할 수 있도록 도와드리겠습니다.
                         </p>
                     </div>
                     <div className="second-section">
                         <h1 data-aos="fade-up" data-aos-offset="300">
-                            We Make It Transforming
+                            Even the greatest ideas are mere fantasies
                         </h1>
                         <h1
                             data-aos="fade-up"
                             data-aos-offset="300"
                             data-aos-delay="100"
                         >
-                            the whispers of your dreams
+                            if not realized
                         </h1>
                         <h1
                             data-aos="fade-up"
                             data-aos-offset="300"
                             data-aos-delay="100"
                         >
-                            into the loud and vibrant
+                            To make your dreams shine,
                         </h1>
                         <h1
                             data-aos="fade-up"
                             data-aos-offset="300"
                             data-aos-delay="100"
                         >
-                            symphony of reality
+                            LUMIC will be with you
                         </h1>
+
                     </div>
                     <div className="third-section">
                         <ThirdSectionContainer
@@ -109,9 +107,7 @@ export default function About(props) {
                             <div className="box">
                                 <h1 data-aos="fade-left">What We Make It</h1>
                                 <h2 data-aos="fade-left" data-aos-delay="100">
-                                    Transforming the whispers of your dreams
-                                    into the loud and vibrant symphony of
-                                    reality
+                                    간단한 랜딩 페이지부터, 고객이 원하는 모든 사이트 제작
                                 </h2>
                             </div>
                             <ScrollUlBox
@@ -138,11 +134,9 @@ export default function About(props) {
                     </div>
                     <div className="fourth-section">
                         <div className="fs-stiky">
-                            <h1>What We Make It</h1>
-                            <h4>symphony of reality</h4>
+                            <h1>Realizing Your Imagination</h1>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
+                                Building a Bridge from Fantasy to Reality
                             </p>
                         </div>
                         <div className="fs-box">
@@ -167,11 +161,11 @@ export default function About(props) {
                         </div>
                     </div>
                     <div className="fifth-section">
-                        <h1>힌트 : 어떤일 하는지 적을것</h1>
+                        <h1>힌트 : 어떤일 하는지 적을것 -> 우리만의 특징으로?</h1>
                         <ul>
-                            <li data-aos="fade-up"></li>
-                            <li data-aos="fade-up" data-aos-delay="200"></li>
-                            <li data-aos="fade-up" data-aos-delay="400"></li>
+                            <li data-aos="fade-up">특별 제작 기능 : 고객이 원하는 특별한 기능 제작 </li>
+                            <li data-aos="fade-up" data-aos-delay="200">서버 관리 : 서버 관리와 운영 서비스를 통해 안정적인 시스템을 보장</li>
+                            <li data-aos="fade-up" data-aos-delay="400">전문적 SEO : 각 검색 사이트에 맞춘 SEO 개발</li>
                         </ul>
                     </div>
                 </div>
