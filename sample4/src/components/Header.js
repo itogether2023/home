@@ -76,7 +76,7 @@ const Nav = styled.nav`
     transform: translateX(-50%);
     left: 50%;
     z-index: 10;
-    background: #101010;
+    /* background: #101010; */
     overflow: hidden;
     transition: 1s all;
     animation: FDown 1s forwards;
@@ -101,8 +101,9 @@ const Nav = styled.nav`
         div {
             width: 35px;
             height: 4px;
-            background-color: white;
+            background-color: black;
             transition: 0.5s;
+            filter: invert(1);
         }
     }
     ul {
