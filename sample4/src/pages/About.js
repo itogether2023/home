@@ -9,6 +9,8 @@ import box1 from "../asset/movie/box1.mp4";
 import box2 from "../asset/movie/box2.mp4";
 import box3 from "../asset/movie/box3.mp4";
 
+import back1 from "../asset/img/main/back1.jpg";
+
 import mamot1 from "../asset/img/main/mamot(1).png";
 import mamot2 from "../asset/img/main/mamot(2).png";
 import mamot3 from "../asset/img/main/mamot(3).png";
@@ -74,14 +76,26 @@ export default function About(props) {
                         <h1 data-aos="fade-up" data-aos-offset="300">
                             Even the greatest ideas are mere fantasies
                         </h1>
-                        <h1 data-aos="fade-up" data-aos-offset="300">
-                            if not realized
+                        <h1
+                            data-aos="fade-up"
+                            data-aos-offset="300"
+                            data-aos-delay="100"
+                        >
+                            the whispers of your dreams
                         </h1>
-                        <h1 data-aos="fade-up" data-aos-offset="300">
-                            To make your dreams shine,
+                        <h1
+                            data-aos="fade-up"
+                            data-aos-offset="300"
+                            data-aos-delay="100"
+                        >
+                            into the loud and vibrant
                         </h1>
-                        <h1 data-aos="fade-up" data-aos-offset="300">
-                            LUMIC will be with you
+                        <h1
+                            data-aos="fade-up"
+                            data-aos-offset="300"
+                            data-aos-delay="100"
+                        >
+                            symphony of reality
                         </h1>
 
                     </div>
@@ -151,6 +165,7 @@ export default function About(props) {
                         </div>
                     </div>
                     <div className="fifth-section">
+                        <h1>힌트 : 어떤일 하는지 적을것</h1>
                         <ul>
                             <li data-aos="fade-up"></li>
                             <li data-aos="fade-up" data-aos-delay="200"></li>
@@ -194,7 +209,9 @@ const Section = styled.div`
         }
         .fourth-section {
             height: 2500px;
-            background: #101010;
+            background: url(${back1});
+            background-size: cover;
+            background-attachment: fixed;
             padding-top: 100px;
             padding-bottom: 300px;
             position: relative;
@@ -206,8 +223,6 @@ const Section = styled.div`
                 left: 50%;
                 transform: translateX(-50%, -50%);
                 color: white;
-                /* background: rgba(0, 0, 0, 0.3); */
-
                 h1 {
                     font-size: 42px;
                     padding-bottom: 10px;
@@ -262,6 +277,11 @@ const Section = styled.div`
             background: #101010;
             padding-top: 200px;
             padding-bottom: 200px;
+            h1 {
+                color: white;
+                text-align: center;
+                margin-bottom: 50px;
+            }
             ul {
                 width: 100%;
                 display: flex;

@@ -101,8 +101,9 @@ const Nav = styled.nav`
         div {
             width: 35px;
             height: 4px;
-            background-color: white;
+            background-color: black;
             transition: 0.5s;
+            filter: invert(1);
         }
     }
     ul {
@@ -113,13 +114,14 @@ const Nav = styled.nav`
         gap: 20px;
         margin-top: 20px;
         margin-bottom: 100px;
-
+        margin-right: 2%;
         li {
             cursor: pointer;
             font-size: 86px;
             padding: 0 20px;
             color: #999999;
             opacity: 0;
+            transition: 0.5s;
         }
     }
 
