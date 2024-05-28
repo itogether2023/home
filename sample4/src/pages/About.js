@@ -81,21 +81,21 @@ export default function About(props) {
                             data-aos-offset="300"
                             data-aos-delay="100"
                         >
-                            the whispers of your dreams
+                            if not realized
                         </h1>
                         <h1
                             data-aos="fade-up"
                             data-aos-offset="300"
                             data-aos-delay="100"
                         >
-                            into the loud and vibrant
+                            To make your dreams shine,
                         </h1>
                         <h1
                             data-aos="fade-up"
                             data-aos-offset="300"
                             data-aos-delay="100"
                         >
-                            symphony of reality
+                            LUMIC will be with you
                         </h1>
 
                     </div>
@@ -107,9 +107,7 @@ export default function About(props) {
                             <div className="box">
                                 <h1 data-aos="fade-left">What We Make It</h1>
                                 <h2 data-aos="fade-left" data-aos-delay="100">
-                                    Transforming the whispers of your dreams
-                                    into the loud and vibrant symphony of
-                                    reality
+                                    간단한 랜딩 페이지부터, 고객이 원하는 모든 사이트 제작
                                 </h2>
                             </div>
                             <ScrollUlBox
@@ -136,11 +134,9 @@ export default function About(props) {
                     </div>
                     <div className="fourth-section">
                         <div className="fs-stiky">
-                            <h1>What We Make It</h1>
-                            <h4>symphony of reality</h4>
+                            <h1>Realizing Your Imagination</h1>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
+                                Building a Bridge from Fantasy to Reality
                             </p>
                         </div>
                         <div className="fs-box">
@@ -165,11 +161,11 @@ export default function About(props) {
                         </div>
                     </div>
                     <div className="fifth-section">
-                        <h1>힌트 : 어떤일 하는지 적을것</h1>
+                        <h1>힌트 : 어떤일 하는지 적을것 -> 우리만의 특징으로?</h1>
                         <ul>
-                            <li data-aos="fade-up"></li>
-                            <li data-aos="fade-up" data-aos-delay="200"></li>
-                            <li data-aos="fade-up" data-aos-delay="400"></li>
+                            <li data-aos="fade-up">특별 제작 기능 : 고객이 원하는 특별한 기능 제작 </li>
+                            <li data-aos="fade-up" data-aos-delay="200">서버 관리 : 서버 관리와 운영 서비스를 통해 안정적인 시스템을 보장</li>
+                            <li data-aos="fade-up" data-aos-delay="400">전문적 SEO : 각 검색 사이트에 맞춘 SEO 개발</li>
                         </ul>
                     </div>
                 </div>
