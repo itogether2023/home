@@ -8,13 +8,7 @@ import "aos/dist/aos.css";
 import logo from "../asset/img/header/logo.png";
 
 export default function Header(props) {
-    const location = useLocation();
-    const [page, setPage] = useState("");
     const [show, setShow] = useState(false);
-
-    useEffect(() => {
-        setPage(location.pathname.substring(1).toUpperCase());
-    }, [location]);
 
     const xyHandler = (e, linkTarget) => {
         props.xyHandler(e, linkTarget);

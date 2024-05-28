@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import Main from "./pages/Main";
@@ -14,45 +14,24 @@ import "./asset/css/ani.css";
 import { useEffect, useState } from "react";
 
 function App() {
+    const location = useLocation();
     const [startLoading, setStartLoading] = useState(false);
     const [closeLoading, setCloseLoading] = useState(true);
     const [boxSize, setBoxSize] = useState(0);
+    const [page, setPage] = useState("");
+
     const navigate = useNavigate();
 
     const [xy, setXY] = useState({ x: 0, y: 0 });
 
+    useEffect(() => {
+        setPage(location.pathname.substring(1).toUpperCase());
+        console.log(page);
+    }, [location]);
+
     const xyHandler = (e, linkTarget) => {
         setStartLoading(true);
-        // setTimeout(() => {
-        //     const mouseX = e.clientX;
-        //     const mouseY = e.clientY;
-        //     setXY({ x: mouseX, y: mouseY });
-        //     setBoxSize(300);
-        // }, 100);
-        // setTimeout(() => {
-        //     navigate(linkTarget);
-        //     setBoxSize(0);
-        // }, 1000);
-        // setTimeout(() => {
-        //     setStartLoading(false);
-        // }, 2000);
         navigate(linkTarget);
-        // setTimeout(() => {
-        //     const mouseX = e.clientX;
-        //     const mouseY = e.clientY;
-        //     setXY({ x: mouseX, y: mouseY });
-        //     setBoxSize(300);
-
-        //     setTimeout(() => {
-        //         navigate(linkTarget);
-        //         setTimeout(() => {
-        //             setBoxSize(0);
-        //             setTimeout(() => {
-        //                 setStartLoading(false);
-        //             }, 1000); // 마지막 애니메이션 종료 후 1초 후에 로딩 상태를 해제합니다.
-        //         }, 1000); // 페이지 이동 후 1초 후에 박스 크기를 다시 0으로 설정합니다.
-        //     }, 1000); // 박스 크기가 300으로 변한 후 1초 후에 페이지를 이동합니다.
-        // }, 100); // 로딩 상태를 설정한 후 0.1초 후에 박스 크기를 설정합니다.
     };
 
     return (
@@ -72,8 +51,7 @@ function App() {
                 <Route path="/about" element={<About></About>}></Route>
                 <Route path="/contact" element={<Contact></Contact>}></Route>
             </Routes>
-
-            {/* <Footer /> */}
+            {page !== "" && <Footer />}
         </section>
     );
 }
