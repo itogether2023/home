@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import at2 from "../asset/img/main/at2.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+    const navi = useNavigate();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <Section>
@@ -13,17 +18,18 @@ export default function Footer() {
                             <h4>Turning dreams into reality</h4>
                             <h1>LUMIC</h1>
                         </div>
-                        <ul className="nav">
-                            <li>
-                                <span>ABOUT</span>
-                            </li>
-                            <li>
-                                <span>PORTFOLIO</span>
-                            </li>
-                            <li>
-                                <span>CONTACT</span>
-                            </li>
-                        </ul>
+                        <div
+                            className="nav"
+                            onClick={() => {
+                                window.scrollTo(0, 0);
+                                navi("/contact");
+                            }}
+                        >
+                            <h2>Contact Us</h2>
+                            <p>
+                                <i class="fa-solid fa-right-long"></i>
+                            </p>
+                        </div>
                     </div>
                     <div className="info">
                         <p>PKD Company, Dalseo-gu, Deagu, Republic of Korea</p>
@@ -60,28 +66,16 @@ const Section = styled.div`
             flex-direction: column;
             font-size: 32px;
             gap: 20px;
-            cursor: default;
-            li {
-            }
-            span {
-                display: inline;
-                position: relative;
-            }
-            span::after {
-                content: "";
-                width: 0%;
-                height: 10px;
-                background: rgba(0, 0, 0, 0.4);
-                position: absolute;
-                top: 60%;
-                left: 0;
-                transition: 0.5s all;
-            }
+            cursor: pointer;
 
-            li:hover {
-                span::after {
-                    width: 100%;
-                }
+            i {
+                font-size: 72px;
+                transition: 1s all;
+            }
+        }
+        .nav:hover {
+            i {
+                transform: translateX(200%);
             }
         }
     }
