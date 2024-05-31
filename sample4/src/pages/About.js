@@ -9,7 +9,7 @@ import box1 from "../asset/movie/box1.mp4";
 import box2 from "../asset/movie/box2.mp4";
 import box3 from "../asset/movie/box3.mp4";
 
-import back1 from "../asset/img/main/back1.jpg";
+import back1 from "../asset/img/main/back13.jpg";
 
 import mamot1 from "../asset/img/main/mamot(1).png";
 import mamot2 from "../asset/img/main/mamot(2).png";
@@ -24,6 +24,7 @@ export default function About(props) {
     const [visibility, setVisibility] = useState("visible");
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         AOS.init();
     }, []);
 
@@ -64,12 +65,15 @@ export default function About(props) {
                         </video>
                         <h1>LUMIC - LUcid MIstiC</h1>
                         <h3>
-                            상상을 현실로 이루어주는 영감의 직조기 (Inspiration Loom)
+                            상상을 현실로 이루어주는 영감의 직조기 (Inspiration
+                            Loom)
                         </h3>
                         <p>
-                            아무리 뛰어난 아이디어와 혁신적인 아이템이라도 실현되지 않으면 그저 공상에 불과합니다.<br></br>
+                            아무리 뛰어난 아이디어와 혁신적인 아이템이라도
+                            실현되지 않으면 그저 공상에 불과합니다.<br></br>
                             {/* 실현되지 않은 상상은 현실에 아무런 영향을 미치지 못하며, 결국 잊혀질 뿐입니다. <br></br> */}
-                            LUMIC과 함께라면 여러분의 상상이 현실이 되어 빛을 발할 수 있도록 도와드리겠습니다.
+                            LUMIC과 함께라면 여러분의 상상이 현실이 되어 빛을
+                            발할 수 있도록 도와드리겠습니다.
                         </p>
                     </div>
                     <div className="second-section">
@@ -97,7 +101,6 @@ export default function About(props) {
                         >
                             LUMIC will be with you
                         </h1>
-
                     </div>
                     <div className="third-section">
                         <ThirdSectionContainer
@@ -107,7 +110,8 @@ export default function About(props) {
                             <div className="box">
                                 <h1 data-aos="fade-left">What We Make It</h1>
                                 <h2 data-aos="fade-left" data-aos-delay="100">
-                                    간단한 랜딩 페이지부터, 고객이 원하는 모든 사이트까지
+                                    간단한 랜딩 페이지부터, 고객이 원하는 모든
+                                    사이트 제작
                                 </h2>
                             </div>
                             <ScrollUlBox
@@ -135,9 +139,7 @@ export default function About(props) {
                     <div className="fourth-section">
                         <div className="fs-stiky">
                             <h1>Realizing Your Imagination</h1>
-                            <p>
-                                Building a Bridge from Fantasy to Reality
-                            </p>
+                            <p>Building a Bridge from Fantasy to Reality</p>
                         </div>
                         <div className="fs-box">
                             <video autoPlay loop muted data-aos="fade-up">
@@ -161,11 +163,20 @@ export default function About(props) {
                         </div>
                     </div>
                     <div className="fifth-section">
-                        <h1>힌트 : 어떤일 하는지 적을것 -> 우리만의 특징으로?</h1>
+                        <h1>
+                            힌트 : 어떤일 하는지 적을것 -> 우리만의 특징으로?
+                        </h1>
                         <ul>
-                            <li data-aos="fade-up">특별 제작 기능 : 고객이 원하는 특별한 기능 제작 </li>
-                            <li data-aos="fade-up" data-aos-delay="200">서버 관리 : 서버 관리와 운영 서비스를 통해 안정적인 시스템을 보장</li>
-                            <li data-aos="fade-up" data-aos-delay="400">전문적 SEO : 각 검색 사이트에 맞춘 SEO 개발</li>
+                            <li data-aos="fade-up">
+                                특별 제작 기능 : 고객이 원하는 특별한 기능 제작{" "}
+                            </li>
+                            <li data-aos="fade-up" data-aos-delay="200">
+                                서버 관리 : 서버 관리와 운영 서비스를 통해
+                                안정적인 시스템을 보장
+                            </li>
+                            <li data-aos="fade-up" data-aos-delay="400">
+                                전문적 SEO : 각 검색 사이트에 맞춘 SEO 개발
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -200,7 +211,7 @@ const Section = styled.div`
         }
         .third-section {
             height: 2000px;
-            background: #101010;
+            background: black;
             padding: 150px 0px;
         }
         .fourth-section {
