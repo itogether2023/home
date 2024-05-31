@@ -107,7 +107,7 @@ export default function About(props) {
                             <div className="box">
                                 <h1 data-aos="fade-left">What We Make It</h1>
                                 <h2 data-aos="fade-left" data-aos-delay="100">
-                                    간단한 랜딩 페이지부터, 고객이 원하는 모든 사이트 제작
+                                    간단한 랜딩 페이지부터, 고객이 원하는 모든 사이트까지
                                 </h2>
                             </div>
                             <ScrollUlBox
