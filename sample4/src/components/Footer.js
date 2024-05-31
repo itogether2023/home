@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import at2 from "../asset/img/main/at2.png";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +11,7 @@ export default function Footer() {
     const navi = useNavigate();
     useEffect(() => {
         window.scrollTo(0, 0);
+        AOS.init();
     }, []);
     return (
         <>
@@ -15,8 +19,16 @@ export default function Footer() {
                 <div className="container">
                     <div className="flexBox">
                         <div className="title">
-                            <h4>Turning dreams into reality</h4>
-                            <h1>LUMIC</h1>
+                            <h4 data-aos="fade" data-aos-duration="1000">
+                                Turning dreams into reality
+                            </h4>
+                            <h1
+                                data-aos="fade"
+                                data-aos-duration="1000"
+                                data-aos-delay="300"
+                            >
+                                LUMIC
+                            </h1>
                         </div>
                         <div
                             className="nav"
@@ -25,8 +37,18 @@ export default function Footer() {
                                 navi("/contact");
                             }}
                         >
-                            <h2>Contact Us</h2>
-                            <p>
+                            <h2
+                                data-aos="fade-right"
+                                data-aos-duration="1000"
+                                data-aos-delay="500"
+                            >
+                                Contact Us
+                            </h2>
+                            <p
+                                data-aos="fade-right"
+                                data-aos-duration="1000"
+                                data-aos-delay="800"
+                            >
                                 <i class="fa-solid fa-right-long"></i>
                             </p>
                         </div>

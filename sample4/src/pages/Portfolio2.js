@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import gawon from "../asset/img/port/가원2.png";
@@ -10,10 +10,73 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Portfolio() {
+    const [scroll, setScroll] = useState(0);
+    const [active, setActive] = useState([
+        [100, 1, -20, 0],
+        [100, 1, -20, 0],
+        [100, 1, -20, 0],
+        [100, 1, -20, 0],
+    ]);
+
     useEffect(() => {
         window.scrollTo(0, 0);
         AOS.init();
     }, []);
+
+    useEffect(() => {
+        window.addEventListener("scroll", onScroll);
+    });
+    useEffect(() => {
+        if (scroll < 555) {
+            setActive([
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+            ]);
+        }
+
+        if (scroll >= 555) {
+            setActive([
+                [0, 1.1, 0, 1],
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+            ]);
+        }
+
+        if (scroll >= 1050) {
+            setActive([
+                [100, 1, -20, 0],
+                [0, 1.1, 0, 1],
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+            ]);
+        }
+
+        if (scroll >= 1650) {
+            setActive([
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+                [0, 1.1, 0, 1],
+                [100, 1, -20, 0],
+            ]);
+        }
+
+        if (scroll >= 2250) {
+            setActive([
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+                [100, 1, -20, 0],
+                [0, 1.1, 0, 1],
+            ]);
+        }
+    }, [scroll]);
+
+    const onScroll = () => {
+        setScroll(window.scrollY);
+    };
+
     return (
         <>
             <Section>
@@ -42,27 +105,61 @@ export default function Portfolio() {
                         </h1>
                     </div>
                     <ul className="listBox">
-                        <div className="scrollIcon">
-                            <p>></p>
-                            <p>></p>
-                            <p>></p>
+                        <div
+                            className="scrollIcon"
+                            data-aos="fade-down"
+                            data-aos-offset="300"
+                            data-aos-delay="1800"
+                        >
+                            <p>▼</p>
+                            <p>▼</p>
+                            <p>▼</p>
+                            <span>Scroll</span>
                         </div>
-                        <li data-aos="fade-up" data-aos-offset="300">
+                        <ListItem1
+                            filter={active[0][0]}
+                            scale={active[0][1]}
+                            top={active[0][2]}
+                            opacity={active[0][3]}
+                        >
                             <img src={gawon} alt="" />
                             <p>가원 법률 사무소</p>
-                        </li>
-                        <li data-aos="fade-up" data-aos-offset="300">
+                        </ListItem1>
+                        <ListItem2
+                            filter={active[1][0]}
+                            scale={active[1][1]}
+                            top={active[1][2]}
+                            opacity={active[1][3]}
+                        >
                             <img src={pois} alt="" />
                             <p>포이스</p>
-                        </li>
-                        <li data-aos="fade-up" data-aos-offset="300">
+                        </ListItem2>
+                        <ListItem3
+                            filter={active[2][0]}
+                            scale={active[2][1]}
+                            top={active[2][2]}
+                            opacity={active[2][3]}
+                        >
                             <img src={taco} alt="" />
                             <p>타코잉닭</p>
-                        </li>
-                        <li data-aos="fade-up" data-aos-offset="300">
+                        </ListItem3>
+                        <ListItem4
+                            filter={active[3][0]}
+                            scale={active[3][1]}
+                            top={active[3][2]}
+                            opacity={active[3][3]}
+                        >
                             <img src={lifehim} alt="" />
                             <p>라이프힘</p>
-                        </li>
+                        </ListItem4>
+                        <div className="listEnd">
+                            <h1 data-aos="fade-right" data-aos-delay="300">
+                                What More?
+                            </h1>
+                            <p data-aos="fade-right" data-aos-delay="600">
+                                Contact Us
+                            </p>
+                        </div>
                     </ul>
                 </div>
             </Section>
@@ -74,6 +171,7 @@ const Section = styled.div`
     .container {
         height: 3600px;
         position: relative;
+        padding-bottom: 100px;
         .titleBox {
             padding-top: 150px;
             position: sticky;
@@ -111,19 +209,28 @@ const Section = styled.div`
                 text-align: center;
                 margin-bottom: 500px;
                 font-size: 32px;
+                cursor: default;
                 p {
                     line-height: 0.4;
                 }
                 p:first-child {
                     animation: arrow 1s infinite;
+                    font-size: 46px;
                 }
                 p:nth-child(2) {
-                    animation: arrow 1s 0.2s infinite;
+                    animation: arrow 1s 0.1s infinite;
+                    font-size: 38px;
                 }
                 p:nth-child(3) {
-                    animation: arrow 1s 0.3s infinite;
+                    animation: arrow 1s 0.2s infinite;
+                    font-size: 32px;
                 }
-
+                span {
+                    position: relative;
+                    display: block;
+                    padding-top: 50px;
+                    font-weight: bold;
+                }
                 @keyframes arrow {
                     from {
                         opacity: 0;
@@ -137,32 +244,77 @@ const Section = styled.div`
             }
             li {
                 margin-bottom: 200px;
-                p {
-                    font-size: 24px;
-                    padding-top: 30px;
-                    opacity: 0;
-                    transition: 1s all;
-                    top: -20px;
-                    position: relative;
-                }
                 img {
                     border: 2px solid black;
                     width: 80%;
-                    filter: grayscale(100%);
                     transition: 0.5s all;
                 }
             }
-            li:hover {
-                cursor: pointer;
-                img {
-                    filter: grayscale(0%);
-                    transform: scale(1.1);
+            .listEnd {
+                padding-top: 100px;
+                text-align: center;
+                cursor: default;
+                h1 {
+                    font-size: 68px;
+                    line-height: 1.5;
                 }
                 p {
-                    opacity: 1;
-                    top: 0px;
+                    font-size: 32px;
                 }
             }
         }
+    }
+`;
+
+const ListItem1 = styled.li`
+    transition: 0.5s all;
+    filter: grayscale(${(props) => props.filter}%);
+    transform: scale(${(props) => props.scale});
+    p {
+        font-size: 24px;
+        padding-top: 10px;
+        opacity: ${(props) => props.opacity};
+        transition: 1s all;
+        top: ${(props) => props.top}px;
+        position: relative;
+    }
+`;
+const ListItem2 = styled.li`
+    transition: 0.5s all;
+    filter: grayscale(${(props) => props.filter}%);
+    transform: scale(${(props) => props.scale});
+    p {
+        font-size: 24px;
+        padding-top: 10px;
+        opacity: ${(props) => props.opacity};
+        transition: 1s all;
+        top: ${(props) => props.top}px;
+        position: relative;
+    }
+`;
+const ListItem3 = styled.li`
+    transition: 0.5s all;
+    filter: grayscale(${(props) => props.filter}%);
+    transform: scale(${(props) => props.scale});
+    p {
+        font-size: 24px;
+        padding-top: 10px;
+        opacity: ${(props) => props.opacity};
+        transition: 1s all;
+        top: ${(props) => props.top}px;
+        position: relative;
+    }
+`;
+const ListItem4 = styled.li`
+    transition: 0.5s all;
+    filter: grayscale(${(props) => props.filter}%);
+    transform: scale(${(props) => props.scale});
+    p {
+        font-size: 24px;
+        padding-top: 10px;
+        opacity: ${(props) => props.opacity};
+        transition: 1s all;
+        top: ${(props) => props.top}px;
+        position: relative;
     }
 `;
