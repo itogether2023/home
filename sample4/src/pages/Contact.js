@@ -175,4 +175,18 @@ const Section = styled.div`
             }
         }
     }
+    @media screen and (max-width: 700px) {
+        form {
+            .fBox {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 10px;
+                div {
+                    input[type="text"] {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
 `;

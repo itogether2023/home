@@ -73,6 +73,7 @@ const Section = styled.div`
         padding: 60px 60px;
         display: flex;
         justify-content: space-between;
+        width: 100%;
         .title {
             font-weight: bold;
             h1 {
@@ -108,6 +109,27 @@ const Section = styled.div`
         p {
             padding-top: 10px;
             font-size: 20px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .flexBox {
+            flex-direction: column;
+            padding: 60px 10px;
+        }
+        .flexBox .title h4 {
+            font-size: 28px;
+        }
+        .flexBox .title h1 {
+            font-size: 76px;
+            padding-top: 0px;
+        }
+        .info {
+            text-align: start;
+            padding-right: 0px;
+            padding-bottom: 60px;
+        }
+        .flexBox .nav {
+            display: none;
         }
     }
 `;

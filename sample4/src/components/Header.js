@@ -154,4 +154,7 @@ const Nav = styled.nav`
     ul li:hover {
         color: white;
     }
+    @media screen and (max-width: 600px) {
+        left: 50%;
+    }
 `;
